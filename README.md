@@ -22,20 +22,20 @@ Important: MVC not totally correct - there are still left overs of procedural PH
 
   - [x] Client account (login & security)
 
-  - [] Research bar 
+  - [ ] Research bar 
 
   - [x] Newsletter (only add the email address to the database)
 
-  - [] The shopping cart must work (add / remove / calculate / order) (started it)
+  - [ ] The shopping cart must work (add / remove / calculate / order) (started it)
 
     
 
 ### Nice-to-have features
 
 - [x] All img should be displayed dynamically (not all, but the products ones yes)
-- [] The shop filters are working (sidebar shop)
-- [] Wishlist
-- [] Contact Us
+- [ ] The shop filters are working (sidebar shop)
+- [ ] Wishlist
+- [ ] Contact Us
 
 
 ## Evaluation criterias
