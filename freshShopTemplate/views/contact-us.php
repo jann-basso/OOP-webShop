@@ -22,7 +22,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-sm-12">
-                    <div class="contact-form-right">
+                    <div class="contact-form-left">
                         <h2>GET IN TOUCH</h2>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed odio justo, ultrices ac nisl sed, lobortis porta elit. Fusce in metus ac ex venenatis ultricies at cursus mauris.</p>
                         <form id="contactForm">

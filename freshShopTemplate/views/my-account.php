@@ -39,7 +39,7 @@
                         <div class="account-box">
                             <div class="service-box">
                                 <div class="service-icon">
-                                    <a href="#"><i class="fa fa-lock"></i> </a>
+                                    <a href="index.php?action=login-security"><i class="fa fa-lock"></i> </a>
                                 </div>
                                 <div class="service-desc">
                                     <h4>Login &amp; security</h4>

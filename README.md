@@ -10,29 +10,32 @@ Project done by Jann Basso
 ## Goal
 Implement back-end with PHP in OOP (front-end already given).
 
+Important: MVC not totally correct - there are still left overs of procedural PHP in the views. Tried to use the least I could while studying the best way to do a better MCV model for future projects.
+
+(still not finished)
 
 ### Must-have features
 
 - All the features of the home page must work
 
-  - Register & sign in/out
+  - [x] Register & sign in/out
 
-  - Client account 
+  - [x] Client account (login & security)
 
-  - Research bar 
+  - [] Research bar 
 
-  - Newsletter (only add the email address to the database)
+  - [x] Newsletter (only add the email address to the database)
 
-  - The shopping cart must work (add / remove / calculate / order)
+  - [] The shopping cart must work (add / remove / calculate / order) (started it)
 
     
 
 ### Nice-to-have features
 
-- All img should be displayed dynamically
-- The shop filters are working (sidebar shop)
-- Wishlist
-- Contact Us
+- [x] All img should be displayed dynamically (not all, but the products ones yes)
+- [] The shop filters are working (sidebar shop)
+- [] Wishlist
+- [] Contact Us
 
 
 ## Evaluation criterias

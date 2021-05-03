@@ -16,17 +16,17 @@
     <meta name="author" content="">
 
     <!-- Site Icons -->
-    <link rel="shortcut icon" href="../public/images/favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" href="../public/images/apple-touch-icon.png">
+    <link rel="shortcut icon" href="public/images/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="public/images/apple-touch-icon.png">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="../public/css/bootstrap.min.css">
+    <link rel="stylesheet" href="public/css/bootstrap.min.css">
     <!-- Site CSS -->
-    <link rel="stylesheet" href="../public/css/style.css">
+    <link rel="stylesheet" href="public/css/style.css">
     <!-- Responsive CSS -->
-    <link rel="stylesheet" href="../public/css/responsive.css">
+    <link rel="stylesheet" href="public/css/responsive.css">
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="../public/css/custom.css">
+    <link rel="stylesheet" href="public/css/custom.css">
 
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -53,18 +53,35 @@
                     </div>
                     <div class="our-link">
                         <ul>
-                            <li><a href="#"><i class="fa fa-user s_color"></i> My Account</a></li>
-                            <li><a href="#"><i class="fas fa-location-arrow"></i> Our location</a></li>
-                            <li><a href="#"><i class="fas fa-headset"></i> Contact Us</a></li>
+                            <?php
+                            if(isset($_SESSION['username'])){
+                                ?><li><a href="index.php?action=my-account"><i class="fa fa-user s_color"></i><?= $_SESSION['username'] . " - MY ACCOUNT"; ?></a></li><?php
+                            }
+                            ?>
+                            <li><a href="index.php?action=test"><i class="fas fa-location-arrow"></i> Our location</a></li>
+                            <li><a href="index.php?action=contact-us"><i class="fas fa-headset"></i> Contact Us</a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
 					<div class="login-box">
-						<select id="basic" class="selectpicker show-tick form-control" data-placeholder="Sign In">
-							<option>Register Here</option>
-							<option>Sign In</option>
-						</select>
+						<select onchange="location = this.value" id="basic" class="selectpicker show-tick form-control" data-placeholder="Sign In">
+                            <?php 
+                            if(isset($_SESSION['username'])){
+                                ?>
+                                <option selected><?= $_SESSION['username']; ?></option>
+                                <option value="index.php?action=my-account">My Account</option>
+                                <option value="index.php?action=logout">Logout</option>
+                                <?php
+                            } else {
+                                ?>
+                                <option selected>Register/Login</option>
+                                <option value="index.php?action=register">Register Here</option>
+                                <option value="index.php?action=signin">Sign In</option>
+                                <?php
+                            }
+                            ?>           
+						</select> 
 					</div>
                     <div class="text-slid-box">
                         <div id="offer-box" class="carouselTicker">
@@ -112,7 +129,7 @@
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fa fa-bars"></i>
                 </button>
-                    <a class="navbar-brand" href="index.php"><img src="../public/images/logo.png" class="logo" alt=""></a>
+                    <a class="navbar-brand" href="index.php"><img src="public/images/logo.png" class="logo" alt=""></a>
                 </div>
                 <!-- End Header Navigation -->
 
@@ -120,20 +137,20 @@
                 <div class="collapse navbar-collapse" id="navbar-menu">
                     <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
                         <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
-                        <li class="nav-item active"><a class="nav-link" href="about.php">About Us</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.php?action=about">About Us</a></li>
                         <li class="dropdown">
                             <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">SHOP</a>
                             <ul class="dropdown-menu">
-								<li><a href="shop.php">Sidebar Shop</a></li>
-								<li><a href="shop-detail.php">Shop Detail</a></li>
-                                <li><a href="cart.php">Cart</a></li>
-                                <li><a href="checkout.php">Checkout</a></li>
-                                <li><a href="my-account.php">My Account</a></li>
-                                <li><a href="wishlist.php">Wishlist</a></li>
+								<li><a href="index.php?action=shop">Sidebar Shop</a></li>
+								<li><a href="index.php?action=shop-detail">Shop Detail</a></li>
+                                <li><a href="index.php?action=cart">Cart</a></li>
+                                <li><a href="index.php?action=checkout">Checkout</a></li>
+                                <li><a href="index.php?action=my-account">My Account</a></li>
+                                <li><a href="index.php?action=wishlist">Wishlist</a></li>
                             </ul>
                         </li>
-                        <li class="nav-item"><a class="nav-link" href="gallery.php">Gallery</a></li>
-                        <li class="nav-item"><a class="nav-link" href="contact-us.php">Contact Us</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.php?action=gallery">Gallery</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.php?action=contact-us">Contact Us</a></li>
                     </ul>
                 </div>
                 <!-- /.navbar-collapse -->
@@ -157,17 +174,17 @@
                 <li class="cart-box">
                     <ul class="cart-list">
                         <li>
-                            <a href="#" class="photo"><img src="../public/images/img-pro-01.jpg" class="cart-thumb" alt="" /></a>
+                            <a href="#" class="photo"><img src="public/images/img-pro-01.jpg" class="cart-thumb" alt="" /></a>
                             <h6><a href="#">Delica omtantur </a></h6>
                             <p>1x - <span class="price">$80.00</span></p>
                         </li>
                         <li>
-                            <a href="#" class="photo"><img src="../public/images/img-pro-02.jpg" class="cart-thumb" alt="" /></a>
+                            <a href="#" class="photo"><img src="public/images/img-pro-02.jpg" class="cart-thumb" alt="" /></a>
                             <h6><a href="#">Omnes ocurreret</a></h6>
                             <p>1x - <span class="price">$60.00</span></p>
                         </li>
                         <li>
-                            <a href="#" class="photo"><img src="../public/images/img-pro-03.jpg" class="cart-thumb" alt="" /></a>
+                            <a href="#" class="photo"><img src="public/images/img-pro-03.jpg" class="cart-thumb" alt="" /></a>
                             <h6><a href="#">Agam facilisis</a></h6>
                             <p>1x - <span class="price">$40.00</span></p>
                         </li>
@@ -205,7 +222,7 @@
         <div class="main-instagram owl-carousel owl-theme">
             <div class="item">
                 <div class="ins-inner-box">
-                    <img src="../public/images/instagram-img-01.jpg" alt="" />
+                    <img src="public/images/instagram-img-01.jpg" alt="" />
                     <div class="hov-in">
                         <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
@@ -213,7 +230,7 @@
             </div>
             <div class="item">
                 <div class="ins-inner-box">
-                    <img src="../public/images/instagram-img-02.jpg" alt="" />
+                    <img src="public/images/instagram-img-02.jpg" alt="" />
                     <div class="hov-in">
                         <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
@@ -221,7 +238,7 @@
             </div>
             <div class="item">
                 <div class="ins-inner-box">
-                    <img src="../public/images/instagram-img-03.jpg" alt="" />
+                    <img src="public/images/instagram-img-03.jpg" alt="" />
                     <div class="hov-in">
                         <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
@@ -229,7 +246,7 @@
             </div>
             <div class="item">
                 <div class="ins-inner-box">
-                    <img src="../public/images/instagram-img-04.jpg" alt="" />
+                    <img src="public/images/instagram-img-04.jpg" alt="" />
                     <div class="hov-in">
                         <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
@@ -237,7 +254,7 @@
             </div>
             <div class="item">
                 <div class="ins-inner-box">
-                    <img src="../public/images/instagram-img-05.jpg" alt="" />
+                    <img src="public/images/instagram-img-05.jpg" alt="" />
                     <div class="hov-in">
                         <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
@@ -245,7 +262,7 @@
             </div>
             <div class="item">
                 <div class="ins-inner-box">
-                    <img src="../public/images/instagram-img-06.jpg" alt="" />
+                    <img src="public/images/instagram-img-06.jpg" alt="" />
                     <div class="hov-in">
                         <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
@@ -253,7 +270,7 @@
             </div>
             <div class="item">
                 <div class="ins-inner-box">
-                    <img src="../public/images/instagram-img-07.jpg" alt="" />
+                    <img src="public/images/instagram-img-07.jpg" alt="" />
                     <div class="hov-in">
                         <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
@@ -261,7 +278,7 @@
             </div>
             <div class="item">
                 <div class="ins-inner-box">
-                    <img src="../public/images/instagram-img-08.jpg" alt="" />
+                    <img src="public/images/instagram-img-08.jpg" alt="" />
                     <div class="hov-in">
                         <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
@@ -269,7 +286,7 @@
             </div>
             <div class="item">
                 <div class="ins-inner-box">
-                    <img src="../public/images/instagram-img-09.jpg" alt="" />
+                    <img src="public/images/instagram-img-09.jpg" alt="" />
                     <div class="hov-in">
                         <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
@@ -277,7 +294,7 @@
             </div>
             <div class="item">
                 <div class="ins-inner-box">
-                    <img src="../public/images/instagram-img-05.jpg" alt="" />
+                    <img src="public/images/instagram-img-05.jpg" alt="" />
                     <div class="hov-in">
                         <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
@@ -303,12 +320,12 @@
                         <div class="col-lg-4 col-md-12 col-sm-12">
                             <div class="footer-top-box">
                                 <h3>Newsletter</h3>
-                                <form class="newsletter-box">
+                                <form class="newsletter-box" action="index.php?action=newsletteraction" method="POST">
                                     <div class="form-group">
-                                        <input class="" type="email" name="Email" placeholder="Email Address*" />
+                                        <input class="" type="email" name="email-newsletter" placeholder="Email Address*" />
                                         <i class="fa fa-envelope"></i>
                                     </div>
-                                    <button class="btn hvr-hover" type="submit">Submit</button>
+                                    <button class="btn hvr-hover" type="submit" name="submitnewsletter">Submit</button>
                                 </form>
                             </div>
                         </div>
@@ -382,21 +399,21 @@
         <a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
 
         <!-- ALL JS FILES -->
-        <script src="../public/js/jquery-3.2.1.min.js"></script>
-        <script src="../public/js/popper.min.js"></script>
-        <script src="../public/js/bootstrap.min.js"></script>
+        <script src="public/js/jquery-3.2.1.min.js"></script>
+        <script src="public/js/popper.min.js"></script>
+        <script src="public/js/bootstrap.min.js"></script>
         <!-- ALL PLUGINS -->
-        <script src="../public/js/jquery.superslides.min.js"></script>
-        <script src="../public/js/bootstrap-select.js"></script>
-        <script src="../public/js/inewsticker.js"></script>
-        <script src="../public/js/bootsnav.js."></script>
-        <script src="../public/js/images-loded.min.js"></script>
-        <script src="../public/js/isotope.min.js"></script>
-        <script src="../public/js/owl.carousel.min.js"></script>
-        <script src="../public/js/baguetteBox.min.js"></script>
-        <script src="../public/js/form-validator.min.js"></script>
-        <script src="../public/js/contact-form-script.js"></script>
-        <script src="../public/js/custom.js"></script>
+        <script src="public/js/jquery.superslides.min.js"></script>
+        <script src="public/js/bootstrap-select.js"></script>
+        <script src="public/js/inewsticker.js"></script>
+        <script src="public/js/bootsnav.js"></script>
+        <script src="public/js/images-loded.min.js"></script>
+        <script src="public/js/isotope.min.js"></script>
+        <script src="public/js/owl.carousel.min.js"></script>
+        <script src="public/js/baguetteBox.min.js"></script>
+        <script src="public/js/form-validator.min.js"></script>
+        <script src="public/js/contact-form-script.js"></script>
+        <script src="public/js/custom.js"></script>
 
 </body>
 </html>

@@ -22,7 +22,7 @@
         <div class="container">
             <div class="row">
 				<div class="col-lg-6">
-                    <div class="banner-frame"> <img class="img-fluid" src="../public/images/about-img.jpg" alt="" />
+                    <div class="banner-frame"> <img class="img-fluid" src="public/images/about-img.jpg" alt="" />
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -61,7 +61,7 @@
                 </div>
                 <div class="col-sm-6 col-lg-3">
                     <div class="hover-team">
-                        <div class="our-team"> <img src="../public/images/img-1.jpg" alt="" />
+                        <div class="our-team"> <img src="public/images/img-1.jpg" alt="" />
                             <div class="team-content">
                                 <h3 class="title">Williamson</h3> <span class="post">Web Developer</span> </div>
                             <ul class="social">
@@ -87,7 +87,7 @@
                 </div>
                 <div class="col-sm-6 col-lg-3">
                     <div class="hover-team">
-                        <div class="our-team"> <img src="../public/images/img-2.jpg" alt="" />
+                        <div class="our-team"> <img src="public/images/img-2.jpg" alt="" />
                             <div class="team-content">
                                 <h3 class="title">Kristiana</h3> <span class="post">Web Developer</span> </div>
                             <ul class="social">
@@ -113,7 +113,7 @@
                 </div>
                 <div class="col-sm-6 col-lg-3">
                     <div class="hover-team">
-                        <div class="our-team"> <img src="../public/images/img-3.jpg" alt="" />
+                        <div class="our-team"> <img src="public/images/img-3.jpg" alt="" />
                             <div class="team-content">
                                 <h3 class="title">Steve Thomas</h3> <span class="post">Web Developer</span> </div>
                             <ul class="social">
@@ -139,7 +139,7 @@
                 </div>
                 <div class="col-sm-6 col-lg-3">
                     <div class="hover-team">
-                        <div class="our-team"> <img src="../public/images/img-1.jpg" alt="" />
+                        <div class="our-team"> <img src="public/images/img-1.jpg" alt="" />
                             <div class="team-content">
                                 <h3 class="title">Williamson</h3> <span class="post">Web Developer</span> </div>
                             <ul class="social">
