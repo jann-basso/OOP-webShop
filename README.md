@@ -19,20 +19,20 @@ Implement back-end with PHP in OOP (front-end already given).
 
   - [x] Client account (login & security)
 
-  - [] Research bar 
+  - [ ] Research bar 
 
   - [x] Newsletter (only add the email address to the database)
 
-  - [] The shopping cart must work (add / remove / calculate / order) (started it)
+  - [x] The shopping cart must work (add / remove / calculate / order) (not finished)
 
     
 
 ### Nice-to-have features
 
 - [x] All img should be displayed dynamically (not all, but the products ones yes)
-- [] The shop filters are working (sidebar shop)
-- [] Wishlist
-- [] Contact Us
+- [ ] The shop filters are working (sidebar shop)
+- [ ] Wishlist
+- [ ] Contact Us
 
 
 ## Evaluation criterias
