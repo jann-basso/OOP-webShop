@@ -130,9 +130,6 @@
                                 <img src="public/images/<?= $item->product_image[$i]; ?>" class="img-fluid" alt="Image">
                                 <div class="mask-icon">
                                     <ul>
-                                        <!-- <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
-                                        <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
-                                        <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li> -->
                                         <li>
                                         <form action="index.php?action=shop-detail" method="POST">
                                             <input type="hidden" name="hidden_qty" value="1">
@@ -149,7 +146,6 @@
                                         </form>
                                         </li>
                                     </ul>
-                                    <!--  <a class="cart" href="index.php?action=addtocart" name="addtocart" >Add to Cart</a> -->
                                     <form action="index.php?action=addtocartaction" method="POST">
                                         <input type="hidden" name="hidden_qty" value="1">
                                         <input type="hidden" name="hidden_id" value="<?= $item->product_id[$i]; ?>">

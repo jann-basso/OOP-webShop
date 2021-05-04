@@ -38,6 +38,9 @@ class Products extends Model {
         }
     }
 
-
-
+    public function cookie() { 
+        $cookie_data = stripslashes($_COOKIE['shopping_cart']); //removes backslashes if there are any
+        $cart_data = json_decode($cookie_data, true); // convert json to php string variable
+        return $cart_data;
+    }
 }

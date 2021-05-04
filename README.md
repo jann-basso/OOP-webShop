@@ -10,9 +10,6 @@ Project done by Jann Basso
 ## Goal
 Implement back-end with PHP in OOP (front-end already given).
 
-Important: MVC not totally correct - there are still left overs of procedural PHP in the views. Tried to use the least I could while studying the best way to do a better MCV model for future projects.
-
-(still not finished)
 
 ### Must-have features
 

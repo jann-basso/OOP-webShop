@@ -21,6 +21,9 @@ if (isset($_GET['action'])) {
         case 'cart':
             require('views/cart.php');
             break;
+        case 'delete':
+            require('views/action_views/delete_action.php');
+            break;
         case 'checkout':
             require('views/checkout.php');
             break;
@@ -49,8 +52,8 @@ if (isset($_GET['action'])) {
             require('views/register.php');       
             break;
         case 'registeraction':
-            require('views/action_views/register_action.php');  
             require('views/register.php'); 
+            require('views/action_views/register_action.php');  
             break; 
         case 'signin':
             require('views/signin.php');

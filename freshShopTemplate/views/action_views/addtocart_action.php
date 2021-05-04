@@ -1,4 +1,6 @@
 <?php
+use App\Controller\Products;
+
 if(isset($_POST['addtocart'])) {
     $hidden_id = $_POST['hidden_id'];
     $hidden_qty = $_POST['hidden_qty'];
@@ -6,6 +8,7 @@ if(isset($_POST['addtocart'])) {
     $item = new Products(); 
     $item->getProductByID($_POST['hidden_id']); 
 
+    
     // get info from property array and transform to new array
     $item_array = array(
         'product_id'=>$item->specific_product[0]['product_id'],
@@ -16,11 +19,17 @@ if(isset($_POST['addtocart'])) {
         'stock_quantity'=>$item->specific_product[0]['stock_quantity'],
         'image'=>$item->specific_product[0]['image'],
         'description'=>$item->specific_product[0]['description'],
+        'quantity_tobuy'=>$hidden_qty
     );
 
+
+    $cart_data[] = $item_array;
+
     // json encode created array
-    $item_data = json_encode($item_array);
+    $item_data = json_encode($cart_data);
+
 
     // create 1-day cookie
-    set_cookie('shopping_cart', $item_data, time() + 86400*30);
+    setcookie('shopping_cart', $item_data, time() + 86400*30);
+    header('location: index.php?action=cart');
 }

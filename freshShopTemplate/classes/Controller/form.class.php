@@ -2,8 +2,6 @@
 namespace App\Controller;
 
 class Form extends User {
-    //private $errors;
-
     public function input($inputType, $inputName, $text, $classinfo) {
         return
         "<label for='{$inputName}'>{$text}</label><br>
@@ -25,7 +23,6 @@ class Form extends User {
         } else {
             $error = false;
         }
-        //return $this->errors = $error;
         return $error;
     }
 }
